@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.136
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TidePredictorWebApplication2", "TidePredictorWebApplication2\TidePredictorWebApplication2.csproj", "{7B79ECB3-FC33-4D83-9A29-D6933C885151}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7B79ECB3-FC33-4D83-9A29-D6933C885151}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7B79ECB3-FC33-4D83-9A29-D6933C885151}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7B79ECB3-FC33-4D83-9A29-D6933C885151}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7B79ECB3-FC33-4D83-9A29-D6933C885151}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C13FD765-DCBB-4BA4-977C-4081E32B8D0E}
+	EndGlobalSection
+EndGlobal

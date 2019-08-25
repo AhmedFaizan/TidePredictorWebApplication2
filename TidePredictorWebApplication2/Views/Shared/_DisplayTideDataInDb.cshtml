@@ -1,0 +1,73 @@
+﻿@model TidePredictorWebApplication2.ViewModel.TideViewModel
+
+    <div style="margin-top:50px;">
+
+
+    </div>
+<p style="font-weight:bold;">Tide Records</p>
+    <div>
+        @if (Model.TideStationSelected == "1")
+        {
+            <table class="table table-condensed table-hover">
+                <tr>
+                    <th>@Html.DisplayNameFor(m => m.InumerableOfHulhuleTidesObj.FirstOrDefault().HulhuleTideId)</th>
+
+                    <th>@Html.DisplayNameFor(m => m.InumerableOfHulhuleTidesObj.FirstOrDefault().HulhuleTideDateTime)</th>
+
+                    <th>@Html.DisplayNameFor(m => m.InumerableOfHulhuleTidesObj.FirstOrDefault().HulhuleTideHeight)</th>
+                </tr>
+
+                @foreach (var item in Model.InumerableOfHulhuleTidesObj)
+                {
+                    <tr>
+                        <td>@Html.DisplayFor(m => item.HulhuleTideId)</td>
+                        <td>@Html.DisplayFor(m => item.HulhuleTideDateTime)</td>
+                        <td>@Html.DisplayFor(m => item.HulhuleTideHeight)</td>
+                    </tr>
+                }
+            </table>
+        }
+
+        @if (Model.TideStationSelected == "2")
+        {
+            <table class="table table-condensed table-hover">
+                <tr>
+                    <th>@Html.DisplayNameFor(m => m.InumerableOfHanimaadhooTidesObj.FirstOrDefault().HanimaadhooTideId)</th>
+
+                    <th>@Html.DisplayNameFor(m => m.InumerableOfHanimaadhooTidesObj.FirstOrDefault().HanimaadhooTideDateTime)</th>
+
+                    <th>@Html.DisplayNameFor(m => m.InumerableOfHanimaadhooTidesObj.FirstOrDefault().HanimaadhooTideHeight)</th>
+                </tr>
+
+                @foreach (var item in Model.InumerableOfHanimaadhooTidesObj)
+                {
+                    <tr>
+                        <td>@Html.DisplayFor(m => item.HanimaadhooTideId)</td>
+                        <td>@Html.DisplayFor(m => item.HanimaadhooTideDateTime)</td>
+                        <td>@Html.DisplayFor(m => item.HanimaadhooTideHeight)</td>
+                    </tr>
+                }
+            </table>
+        }
+        @if (Model.TideStationSelected == "3")
+        {
+            <table class="table table-condensed table-hover">
+                <tr>
+                    <th>@Html.DisplayNameFor(m => m.InumerableOfGanTidesObj.FirstOrDefault().GanTideId)</th>
+
+                    <th>@Html.DisplayNameFor(m => m.InumerableOfGanTidesObj.FirstOrDefault().GanTideDateTime)</th>
+
+                    <th>@Html.DisplayNameFor(m => m.InumerableOfGanTidesObj.FirstOrDefault().GanTideHeight)</th>
+                </tr>
+
+                @foreach (var item in Model.InumerableOfGanTidesObj)
+                {
+                    <tr>
+                        <td>@Html.DisplayFor(m => item.GanTideId)</td>
+                        <td>@Html.DisplayFor(m => item.GanTideDateTime)</td>
+                        <td>@Html.DisplayFor(m => item.GanTideHeight)</td>
+                    </tr>
+                }
+            </table>
+        }
+    </div>

@@ -1,0 +1,102 @@
+﻿@model TidePredictorWebApplication2.ViewModel.TideViewModel
+@{
+    ViewData["Title"] = "Index";
+}
+@*<form asp-action="EnterTideDataToDatabase">
+        <input asp-for="TestInt1" class="form-control" />
+        <input type="submit" value="Press this" class="btn btn-primary bigButton" />
+
+
+    </form>*@
+@if (Model.FeedbackMessage != null)
+{
+    @if (Model.FeedbackMessage.Length > 0)
+    {
+        @if (Model.FeedbackMessage == "Saved Successfully")
+        {
+            <div class="alert-dismissable alert-info">@Model.FeedbackMessage</div>
+        }
+        @if (Model.FeedbackMessage == "Error: Couldn't save to database")
+        {
+            <div class="alert-dismissable alert-danger">@Model.FeedbackMessage</div>
+        }
+    }
+}
+<form asp-action="EnterTideDataToDatabase">
+    <div class="row">
+        <div class="col-sm-1">Select Station</div>
+        <div class="col-sm-6">
+            <select class="form-control" asp-for="TideStationSelected" asp-items="@(new SelectList(Model.ListOfTideStations, "TideStationId", "TideStationName"))"></select>
+
+            @*<select id="cmbcmb" class="mango" name="combobbx" value="tidestationCombobox" class="form-control" asp-for="TideStationSelected" asp-items="@(new SelectList(Model.ListOfTideStations, "TideStationId", "TideStationName"))"></select>*@
+            @*<select  class="form-control" asp-for="TideStationSelected" asp-items="@(new SelectList(Model.ListOfTideStations, "TideStationId", "TideStationName"))"></select>*@
+        </div>
+        <div class="col-sm-5"></div>
+    </div>
+    <div class="row">
+        <div class="col-sm-1"> <p>Year</p></div>
+        <div class="col-sm-6"> <input asp-for="YearOfTide" name="YearOfTide" id="InputForYear" class="form-control" /></div>
+        @*  <input asp-for="TestInt1" class="form-control" />*@
+        <div class="col-sm-5"></div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-1"> <p>Month</p></div>
+        <div class="col-sm-6"> <input asp-for="MonthOfTide" value="" id="InputForMonth" class="form-control" /></div>
+        <div class="col-sm-5"></div>
+    </div>
+    <div class="row">
+        <div class="col-sm-1"> <p>Day</p></div>
+        <div class="col-sm-6"> <input asp-for="DayOfTide" value="" name="DayOfTide" id="InputForDay" class="form-control" /></div>
+        <div class="col-sm-5"></div>
+    </div>
+    <div class="row">
+        <div class="col-sm-1"> <p>Time</p></div>
+        <div class="col-sm-6"> <input asp-for="TimeOfTide" value="" name="TimeOfTide" id="InputForTime" class="form-control" /></div>
+        <div class="col-sm-5"></div>
+    </div>
+    <div class="row">
+        <div class="col-sm-1"> <p>Tide Height</p></div>
+        <div class="col-sm-6"> <input asp-for="TideHeightForDataEntry" value="" name="TideHeightForDataEntry" id="InputForHeight" class="form-control" /></div>
+        <div class="col-sm-5"></div>
+    </div>
+    <div class="row">
+        <div class="col-sm-1"></div>
+        <div class="col-sm-6">
+            <input type="submit" value="Save" class="btn btn-primary bigButton" />
+        </div>
+        <div class="col-sm-5"></div>
+    </div>
+
+
+</form>
+
+
+@*<table class="table table-condensed table-hover">
+    @if (Model.TideStationSelected == "1")
+    {
+        @foreach (HulhuleTide HulhuleTide in Model.InumerableOfHulhuleTidesObj)
+        {
+            <tr>
+                <td>@Html.DisplayFor(m => HulhuleTide.HulhuleTideId)</td>
+                <td>@Html.DisplayFor(m => HulhuleTide.HulhuleTideHeight)</td>
+                <td>@Html.DisplayFor(m => HulhuleTide.HulhuleTideDateTime)</td>
+            </tr>
+            //Model.InumerableOfHulhuleTidesObj.Skip(Math.Max(0, Model.InumerableOfHulhuleTidesObj.Count() - 5));
+        }
+    }
+</table>*@
+
+@*<div class="row form-border">
+        @Html.Partial("_DisplayTideDataInDb", Model)
+        <div class="row">
+            @if (Model.TideStationSelected == "Hulhule" && Model.InumerableOfHulhuleTidesObj.Count() == 0 ||
+             Model.TideStationSelected == "Hanimaadhoo" && Model.InumerableOfHanimaadhooTidesObj.Count() == 0 ||
+             Model.TideStationSelected == "Gan" && Model.InumerableOfGanTidesObj.Count() == 0)
+            {
+                <div class="col-sm-12 text-primary" style="padding-bottom:20px;">No tide records found</div>
+            }
+        </div>
+    </div>*@
+
+
